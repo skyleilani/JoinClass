@@ -8,8 +8,9 @@ try:
 
 except ModuleNotFoundError as error: 
     print("please install pyautogui and webbrowser, press any ting to exit")
-
-
+    input()
+    # prevent mouse from spamming all over the place w a failsafe 
+    pyautogui.FAILSAFE = True
 # translating date to python interperatable format 
 # should translate them to list format 
 def translate_date(date): 
@@ -17,9 +18,9 @@ def translate_date(date):
     return list(map(int, dates))
 
 def translate_time(time):
-    times = time.split(":", 2)
-    print(list(map(int, times)))
-    return list(map(int, times))
+    split_time = time.split(":", 2)
+    print(list(map(int, split_time)))
+    return list(map(int, split_time))
 
 def meeting_datetime(meeting_date, meeting_time):
     # (YY, MM, DD, HR, MIN, SEC)    
@@ -32,7 +33,7 @@ def meeting_datetime(meeting_date, meeting_time):
 # meeting_date = str
 # meeting_time = str
 
-def join_zoom (meeting_link, meeting_date, meeting_time): 
+def join_by_link (meeting_link, meeting_date, meeting_time): 
 
     translated_date = translate_date(meeting_date)
     translated_time = translate_time(meeting_time) 
@@ -59,6 +60,6 @@ def join_zoom (meeting_link, meeting_date, meeting_time):
     pyauto.click(x=50, y=776, clicks=1, interval=0, button='left')
 
 
-join_zoom("https://zoom.us/j/5146739899?pwd=Z3JTZzZHd1lyMzRhcHJpemlLUDJOZz09", "3-8-2022", "9:12" )
+join_by_link("https://zoom.us/j/5146739899?pwd=Z3JTZzZHd1lyMzRhcHJpemlLUDJOZz09", "3-8-2022", "9:12" )
 meeting_datetime("3-8-2022", "9:12")
 
