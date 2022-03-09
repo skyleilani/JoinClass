@@ -12,3 +12,4 @@ join zoom classes automatically :~)
     
 - Alert when breakout rooms are initiated 
 - Alert when you automatically go into a class 
+- Autorecord classes 
