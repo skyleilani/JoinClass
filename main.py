@@ -1,10 +1,14 @@
+import datetime, time, click
+
 # PyAutoGUI lets your Python scripts control the 
 # mouse and keyboard to automate interactions with other applications.
-import pyautogui as pyauto
-import webbrowser as wb
-import datetime
-import time
-import click
+try: 
+    import pyautogui as pyauto
+    import webbrowser as wb
+
+except ModuleNotFoundError as error: 
+    print("please install pyautogui and webbrowser, press any ting to exit")
+
 
 # translating date to python interperatable format 
 # should translate them to list format 
@@ -55,6 +59,6 @@ def join_zoom (meeting_link, meeting_date, meeting_time):
     pyauto.click(x=50, y=776, clicks=1, interval=0, button='left')
 
 
-# join_zoom("https://zoom.us/j/5146739899?pwd=Z3JTZzZHd1lyMzRhcHJpemlLUDJOZz09", "3-8-2022", "9:12" )
+join_zoom("https://zoom.us/j/5146739899?pwd=Z3JTZzZHd1lyMzRhcHJpemlLUDJOZz09", "3-8-2022", "9:12" )
 meeting_datetime("3-8-2022", "9:12")
 
