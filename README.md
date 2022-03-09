@@ -1,2 +1,2 @@
 # JoinClass
-join zoom classes 
+join zoom classes automatically :~)
