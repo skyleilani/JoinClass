@@ -13,4 +13,4 @@ join zoom classes automatically :~)
 - Alert when breakout rooms are initiated 
 - Alert when you automatically go into a class 
 - Autorecord classes / screen record when in class
-- Screencapture chat after class 
+- Auto-screencapture chat every 15 minutes  
