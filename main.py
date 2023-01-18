@@ -1,4 +1,4 @@
-import datetime, time, click
+from datetime import datetime, time, click
 
 # PyAutoGUI lets your Python scripts control the 
 # mouse and keyboard to automate interactions with other applications.
@@ -9,10 +9,11 @@ try:
 except ModuleNotFoundError as error: 
     print("please install pyautogui and webbrowser, press any ting to exit")
     input()
-    # prevent mouse from spamming all over the place w a failsafe 
-    pyautogui.FAILSAFE = True
+    
 # translating date to python interperatable format 
 # should translate them to list format 
+# prevent mouse from spamming all over the place w a failsafe 
+pyautogui.FAILSAFE = True
 def translate_date(date): 
     dates = date.split("-",3)
     return list(map(int, dates))
@@ -37,11 +38,11 @@ def join_by_link (meeting_link, meeting_date, meeting_time):
 
     translated_date = translate_date(meeting_date)
     translated_time = translate_time(meeting_time) 
-    scheduled_meeting = meeting_datetime(translate_date, translated_time)
+    scheduled_meeting = meeting_datetime(translated_date, translated_time)
 
     # account for time difference between current time and meeting time 
     time_til_meeting = (scheduled_meeting - datetime.datetime.now().replace(microsecond=0)).total_seconds()
-    print("class starts in " + str(time_til_meeting/60) + " minutes")
+    print("class starts in " + str(int(time_til_meeting/60)) + " minutes and " + str(int(time_til_meeting%60)) + "seconds")
     time.sleep(time_til_meeting)
 
     # zoom plumbing 
