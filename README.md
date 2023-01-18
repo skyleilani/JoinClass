@@ -14,4 +14,4 @@ work in progress for fun
 - Alert when you automatically go into a class 
 - Autorecord classes / screen record when in class
 - Auto-screencapture chat every 15 minutes  
-- Write message on entry (delay like 10 seconds lol) 
+- Write message on entry with delay and on exit 
